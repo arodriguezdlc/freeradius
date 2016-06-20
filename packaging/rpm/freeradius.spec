@@ -344,20 +344,6 @@ exit 0
 
 # mods-config
 %dir %attr(750,root,radiusd) /etc/raddb/mods-config
-/etc/raddb/mods-config/README.rst
-%dir %attr(750,root,radiusd) /etc/raddb/mods-config/attr_filter
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-config/attr_filter/*
-%dir %attr(750,root,radiusd) /etc/raddb/mods-config/files
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-config/files/*
-%dir %attr(750,root,radiusd) /etc/raddb/mods-config/preprocess
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-config/preprocess/*
-
-%dir %attr(750,root,radiusd) /etc/raddb/mods-config/sql
-%dir %attr(750,root,radiusd) /etc/raddb/mods-config/sql/counter
-%dir %attr(750,root,radiusd) /etc/raddb/mods-config/sql/cui
-%dir %attr(750,root,radiusd) /etc/raddb/mods-config/sql/ippool
-%dir %attr(750,root,radiusd) /etc/raddb/mods-config/sql/ippool-dhcp
-%dir %attr(750,root,radiusd) /etc/raddb/mods-config/sql/main
 
 # sites-available
 %dir %attr(750,root,radiusd) /etc/raddb/sites-available
@@ -370,7 +356,6 @@ exit 0
 %attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/example
 %attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/inner-tunnel
 %attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/dhcp
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/check-eap-tls
 %attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/status
 %attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/dhcp.relay
 %attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/virtual.example.com
@@ -381,118 +366,12 @@ exit 0
 %attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/dynamic-clients
 %attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/copy-acct-to-home-server
 %attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/buffered-sql
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/sites-available/tls
 
 # sites-enabled
 # symlink: /etc/raddb/sites-enabled/xxx -> ../sites-available/xxx
 %dir %attr(750,root,radiusd) /etc/raddb/sites-enabled
 %config(missingok) /etc/raddb/sites-enabled/inner-tunnel
 %config(missingok) /etc/raddb/sites-enabled/default
-
-# mods-available
-%dir %attr(750,root,radiusd) /etc/raddb/mods-available
-/etc/raddb/mods-available/README.rst
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/always
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/attr_filter
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/cache
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/cache_eap
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/chap
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/counter
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/cui
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/date
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/detail
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/detail.example.com
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/detail.log
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/dhcp
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/dhcp_sqlippool
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/digest
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/dynamic_clients
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/eap
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/echo
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/etc_group
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/exec
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/expiration
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/expr
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/files
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/idn
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/inner-eap
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/ippool
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/linelog
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/logintime
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/mac2ip
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/mac2vlan
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/mschap
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/ntlm_auth
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/opendirectory
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/otp
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/pam
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/pap
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/passwd
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/preprocess
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/python
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/radutmp
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/realm
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/redis
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/rediswho
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/replicate
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/rest
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/smbpasswd
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/smsotp
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/soh
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/sometimes
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/sql
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/sqlcounter
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/sqlippool
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/sradutmp
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/unix
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/utf8
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/wimax
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/mods-available/yubikey
-
-# mods-enabled
-# symlink: /etc/raddb/mods-enabled/xxx -> ../mods-available/xxx
-%dir %attr(750,root,radiusd) /etc/raddb/mods-enabled
-%config(missingok) /etc/raddb/mods-enabled/always
-%config(missingok) /etc/raddb/mods-enabled/attr_filter
-%config(missingok) /etc/raddb/mods-enabled/cache_eap
-%config(missingok) /etc/raddb/mods-enabled/chap
-%config(missingok) /etc/raddb/mods-enabled/detail
-%config(missingok) /etc/raddb/mods-enabled/detail.log
-%config(missingok) /etc/raddb/mods-enabled/dhcp
-%config(missingok) /etc/raddb/mods-enabled/digest
-%config(missingok) /etc/raddb/mods-enabled/dynamic_clients
-%config(missingok) /etc/raddb/mods-enabled/eap
-%config(missingok) /etc/raddb/mods-enabled/echo
-%config(missingok) /etc/raddb/mods-enabled/exec
-%config(missingok) /etc/raddb/mods-enabled/expiration
-%config(missingok) /etc/raddb/mods-enabled/expr
-%config(missingok) /etc/raddb/mods-enabled/files
-%config(missingok) /etc/raddb/mods-enabled/linelog
-%config(missingok) /etc/raddb/mods-enabled/logintime
-%config(missingok) /etc/raddb/mods-enabled/mschap
-%config(missingok) /etc/raddb/mods-enabled/ntlm_auth
-%config(missingok) /etc/raddb/mods-enabled/pap
-%config(missingok) /etc/raddb/mods-enabled/passwd
-%config(missingok) /etc/raddb/mods-enabled/preprocess
-%config(missingok) /etc/raddb/mods-enabled/radutmp
-%config(missingok) /etc/raddb/mods-enabled/realm
-%config(missingok) /etc/raddb/mods-enabled/replicate
-%config(missingok) /etc/raddb/mods-enabled/soh
-%config(missingok) /etc/raddb/mods-enabled/sradutmp
-%config(missingok) /etc/raddb/mods-enabled/unix
-%config(missingok) /etc/raddb/mods-enabled/utf8
-
-# policy
-%dir %attr(750,root,radiusd) /etc/raddb/policy.d
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/policy.d/accounting
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/policy.d/canonicalization
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/policy.d/control
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/policy.d/cui
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/policy.d/dhcp
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/policy.d/eap
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/policy.d/filter
-%attr(640,root,radiusd) %config(noreplace) /etc/raddb/policy.d/operator-name
-
 
 # binaries
 %defattr(-,root,root)
@@ -516,17 +395,12 @@ exit 0
 
 # loadable modules
 %dir %attr(755,root,root) %{_libdir}/freeradius
-%{_libdir}/freeradius/proto_dhcp.so
-%{_libdir}/freeradius/proto_vmps.so
 %{_libdir}/freeradius/rlm_always.so
 %{_libdir}/freeradius/rlm_attr_filter.so
 %{_libdir}/freeradius/rlm_cache.so
 %{_libdir}/freeradius/rlm_chap.so
 %{_libdir}/freeradius/rlm_counter.so
-%{_libdir}/freeradius/rlm_cram.so
-%{_libdir}/freeradius/rlm_date.so
 %{_libdir}/freeradius/rlm_detail.so
-%{_libdir}/freeradius/rlm_dhcp.so
 %{_libdir}/freeradius/rlm_digest.so
 %{_libdir}/freeradius/rlm_dynamic_clients.so
 %{_libdir}/freeradius/rlm_eap.so
@@ -535,12 +409,8 @@ exit 0
 %{_libdir}/freeradius/rlm_eap_md5.so
 %{_libdir}/freeradius/rlm_eap_mschapv2.so
 %{_libdir}/freeradius/rlm_eap_peap.so
-%if %{HAVE_EC_CRYPTO}
-%{_libdir}/freeradius/rlm_eap_pwd.so
-%endif
 %{_libdir}/freeradius/rlm_eap_sim.so
 %{_libdir}/freeradius/rlm_eap_tls.so
-%{_libdir}/freeradius/rlm_eap_tnc.so
 %{_libdir}/freeradius/rlm_eap_ttls.so
 %{_libdir}/freeradius/rlm_exec.so
 %{_libdir}/freeradius/rlm_expiration.so
@@ -559,15 +429,11 @@ exit 0
 %{_libdir}/freeradius/rlm_realm.so
 %{_libdir}/freeradius/rlm_replicate.so
 %{_libdir}/freeradius/rlm_soh.so
-%{_libdir}/freeradius/rlm_sometimes.so
 %{_libdir}/freeradius/rlm_sql.so
 %{_libdir}/freeradius/rlm_sqlcounter.so
 %{_libdir}/freeradius/rlm_sqlippool.so
-%{_libdir}/freeradius/rlm_sql_null.so
 %{_libdir}/freeradius/rlm_unix.so
-%{_libdir}/freeradius/rlm_utf8.so
 %{_libdir}/freeradius/rlm_wimax.so
-%{_libdir}/freeradius/rlm_yubikey.so
 
 # main man pages
 %doc %{_mandir}/man5/clients.conf.5.gz
@@ -582,7 +448,6 @@ exit 0
 %doc %{_mandir}/man5/rlm_digest.5.gz
 %doc %{_mandir}/man5/rlm_expr.5.gz
 %doc %{_mandir}/man5/rlm_files.5.gz
-%doc %{_mandir}/man5/rlm_idn.5.gz
 %doc %{_mandir}/man5/rlm_mschap.5.gz
 %doc %{_mandir}/man5/rlm_pap.5.gz
 %doc %{_mandir}/man5/rlm_passwd.5.gz
