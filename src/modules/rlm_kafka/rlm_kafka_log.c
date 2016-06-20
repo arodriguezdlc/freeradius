@@ -200,15 +200,15 @@ static int64_t number_mac_partitioner(const void *const_keydata,
 static int64_t mac_partitioner0 (const void *keydata,size_t keylen) {
 	switch(keylen) {
 		/* case strlen(00-00-00-00-00-00): */
-		case strlen("00:00:00:00:00:00"):
+		case sizeof("00:00:00:00:00:00") - 1:
 			return colon_hypen_mac_partitioner0(keydata,keylen,
 								6 /*toks */);
 
-		case strlen("000000-000000"):
+		case sizeof("000000-000000") - 1:
 			return colon_hypen_mac_partitioner0(keydata,keylen,
 								2 /*toks */);
 
-		case strlen("000000000000"):
+		case sizeof("000000000000") - 1:
 			return number_mac_partitioner(keydata,keylen);
 
 		default:
